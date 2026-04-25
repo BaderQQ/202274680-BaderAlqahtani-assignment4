@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Personal website of Bader Alqahtani, a software engineering student at KFUPM, featuring selected projects, public GitHub work, and a contact experience."
+  />
+  <meta name="theme-color" content="#0f172a" />
+  <title>Bader Alqahtani | Personal Website</title>
+  <link rel="preconnect" href="https://api.github.com" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <div class="container nav-bar">
+      <a class="brand" href="#hero" aria-label="Bader Alqahtani home">
+        <span class="brand-mark" aria-hidden="true">BA</span>
+        <span>
+          <strong>Bader Alqahtani</strong>
+          <small>Bader's Personal Website</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#start-here">Start Here</a>
+        <a href="#github">GitHub</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="welcomeBtn" class="btn btn-ghost btn-small" type="button">Personalize</button>
+        <button id="themeBtn" class="btn btn-small" type="button" aria-label="Toggle color theme">Dark Mode</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-panel reveal" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Bader Alqahtani</p>
+          <h1>Software engineering student building simple, useful web experiences.</h1>
+          <p class="lead">
+            Welcome <strong id="visitorName">Guest</strong>. I am a junior software engineering student at KFUPM who enjoys turning ideas into practical websites, organized tools, and clear digital experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn-ghost" href="#start-here">Start Here</a>
+          </div>
+
+          <div class="metrics-grid" aria-label="Website quick details">
+            <div class="metric-card">
+              <span>Theme</span>
+              <strong id="themeStatus">Light</strong>
+            </div>
+            <div class="metric-card">
+              <span>Visit Time</span>
+              <strong id="visitTimer">00:00</strong>
+            </div>
+            <div class="metric-card">
+              <span>Local Time</span>
+              <strong id="localClock">--:--</strong>
+            </div>
+            <div class="metric-card">
+              <span>Featured Projects</span>
+              <strong>4</strong>
+            </div>
+          </div>
+        </div>
+
+        <aside class="profile-card" aria-label="Bader Alqahtani profile card">
+          <div class="profile-image-wrap">
+            <img src="assets/images/myPic.jpeg" alt="Professional portrait of Bader Alqahtani" width="900" height="900" loading="eager" />
+          </div>
+          <div class="profile-details">
+            <h2>Bader Alqahtani</h2>
+            <p>Software Engineering Student - KFUPM</p>
+            <div class="status-pill">Open to learning, collaboration, and new project ideas</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section reveal" id="about">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">About Me</p>
+          <h2>I like building web experiences that feel clear, practical, and easy to improve.</h2>
+          <p>
+            My interests include frontend development, user interface design, JavaScript interactivity, Python programming, and software projects that solve everyday problems in a useful way.
+          </p>
+          <p>
+            I care about clean structure, readable code, and thoughtful presentation. This website is my space to share what I am learning, what I am building, and where I want to grow next.
+          </p>
+        </div>
+
+        <div class="highlight-card card">
+          <h3>What I Enjoy Working On</h3>
+          <ul class="check-list">
+            <li>Designing clean pages that are easy to read and navigate.</li>
+            <li>Building interactive features with JavaScript.</li>
+            <li>Connecting projects to useful public data when it adds value.</li>
+            <li>Creating tools that support learning, planning, and productivity.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft reveal" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Projects</p>
+            <h2>Selected work and ideas.</h2>
+            <p class="muted">A small collection of projects that reflect what I enjoy building: helpful tools, clean interfaces, and practical user flows.</p>
+          </div>
+          <button id="toggleProjectsBtn" class="btn btn-ghost btn-small" type="button">Hide Projects</button>
+        </div>
+
+        <div class="control-panel card" id="projectControls">
+          <label>
+            Search
+            <input type="search" id="projectSearch" placeholder="Search projects..." autocomplete="off" />
+          </label>
+
+          <label>
+            Category
+            <select id="categoryFilter">
+              <option value="all">All Categories</option>
+              <option value="web">Web Apps</option>
+              <option value="productivity">Productivity</option>
+              <option value="learning">Learning</option>
+            </select>
+          </label>
+
+          <label>
+            Focus
+            <select id="interestFilter">
+              <option value="all">All Focus Areas</option>
+              <option value="ux">User Experience</option>
+              <option value="systems">Data and Logic</option>
+              <option value="productivity">Planning and Productivity</option>
+              <option value="learning">Learning Support</option>
+            </select>
+          </label>
+
+          <label>
+            Sort
+            <select id="sortProjects">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="name">Name A-Z</option>
+            </select>
+          </label>
+        </div>
+
+        <p id="projectHint" class="level-hint" aria-live="polite"></p>
+        <div id="projectsGrid" class="projects-grid" aria-live="polite"></div>
+        <p id="emptyState" class="empty-state" hidden>No project matches that view. Try a different keyword or filter.</p>
+      </div>
+    </section>
+
+    <section class="section reveal" id="start-here">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Start Here</p>
+          <h2>Choose what you want to see first.</h2>
+          <p>
+            Not sure where to begin? Pick what you are most interested in, and this guide will point you to a project or section that matches your visit.
+          </p>
+        </div>
+
+        <div class="card guide-card">
+          <div class="control-panel guide-controls">
+            <label>
+              What brings you here?
+              <select id="visitorGoal">
+                <option value="projects">See my strongest projects</option>
+                <option value="collaboration">Find collaboration ideas</option>
+                <option value="learning">Understand my learning style</option>
+                <option value="overview">Get a quick overview</option>
+              </select>
+            </label>
+
+            <label>
+              Interest area
+              <select id="interestArea">
+                <option value="frontend">Frontend and user experience</option>
+                <option value="logic">Problem solving and logic</option>
+                <option value="github">Recent public work</option>
+                <option value="productivity">Productivity tools</option>
+              </select>
+            </label>
+          </div>
+          <button id="recommendBtn" class="btn" type="button">Suggest a Starting Point</button>
+          <div id="recommendationBox" class="recommendation-box" role="status" aria-live="polite">
+            Choose your goal and interest area, then generate a suggestion.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft reveal" id="github">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">GitHub</p>
+            <h2>Recent public work.</h2>
+            <p class="muted">A live snapshot of repositories connected to my public GitHub profile.</p>
+          </div>
+          <button id="refreshReposBtn" class="btn btn-ghost btn-small" type="button">Refresh</button>
+        </div>
+
+        <div class="github-summary card">
+          <div>
+            <span>Profile</span>
+            <strong><a href="https://github.com/BaderQQ" target="_blank" rel="noopener noreferrer">github.com/BaderQQ</a></strong>
+          </div>
+          <div>
+            <span>Repositories Shown</span>
+            <strong id="repoCount">--</strong>
+          </div>
+          <div>
+            <span>Status</span>
+            <strong id="repoStatus">Loading</strong>
+          </div>
+        </div>
+
+        <p id="repoMessage" class="api-message" role="status" aria-live="polite">Loading recent repositories...</p>
+        <div id="repoGrid" class="repo-grid"></div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="contact">
+      <div class="container two-column contact-layout">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s connect.</h2>
+          <p class="muted">
+            Use this form to draft a message for collaboration, questions, or project ideas. The preview helps you review the message before sending it through your preferred contact channel.
+          </p>
+          <div class="card contact-note">
+            <h3>Good Topics</h3>
+            <ul class="check-list">
+              <li>Project ideas or feedback.</li>
+              <li>Collaboration opportunities.</li>
+              <li>Software engineering discussions.</li>
+              <li>Questions about my work or learning journey.</li>
+            </ul>
+          </div>
+        </div>
+
+        <form id="contactForm" class="form card" novalidate>
+          <label>
+            Name
+            <input type="text" id="name" placeholder="Your full name" autocomplete="name" />
+            <small class="error-text" id="nameError"></small>
+          </label>
+
+          <label>
+            Email
+            <input type="email" id="email" placeholder="you@example.com" autocomplete="email" />
+            <small class="error-text" id="emailError"></small>
+          </label>
+
+          <label>
+            Subject
+            <input type="text" id="subject" placeholder="What would you like to discuss?" />
+            <small class="error-text" id="subjectError"></small>
+          </label>
+
+          <label>
+            Message
+            <textarea id="message" rows="5" placeholder="Write your message here..."></textarea>
+            <small class="error-text" id="messageError"></small>
+          </label>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="agree" />
+            <span>I confirm that the information above is accurate.</span>
+          </label>
+          <small class="error-text" id="agreeError"></small>
+
+          <div class="form-actions">
+            <button class="btn" type="submit">Create Preview</button>
+            <button id="clearDraftBtn" class="btn btn-ghost" type="button">Clear Draft</button>
+          </div>
+          <p id="formMsg" class="form-message" role="status" aria-live="polite"></p>
+          <div id="messagePreview" class="message-preview" hidden></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">Top</button>
+
+  <dialog id="projectDialog" class="project-dialog" aria-labelledby="dialogTitle">
+    <button id="closeDialog" class="dialog-close" type="button" aria-label="Close project details">Close</button>
+    <img id="dialogImage" src="assets/images/profile.svg" alt="" width="960" height="540" />
+    <div class="dialog-content">
+      <p class="eyebrow" id="dialogCategory">Project</p>
+      <h2 id="dialogTitle">Project Title</h2>
+      <p id="dialogDescription"></p>
+      <div id="dialogTags" class="badges"></div>
+      <div class="dialog-grid">
+        <div>
+          <h3>Idea</h3>
+          <p id="dialogChallenge"></p>
+        </div>
+        <div>
+          <h3>What I Focused On</h3>
+          <p id="dialogSolution"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Bader Alqahtani</strong>
+        <p>Personal website for projects, learning, and collaboration.</p>
+      </div>
+      <div>
+        <span>Thanks for visiting</span>
+        <span>&copy; <span id="year"></span> Bader Alqahtani</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
