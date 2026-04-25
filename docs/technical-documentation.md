@@ -29,6 +29,7 @@ The website is designed to be practical for long-term personal use. It presents 
 │   └── technical-documentation.md
 ├── presentation/
 │   ├── slides.pdf
+│   ├── demo-video-PlanB.md
 │   └── demo-video.mp4
 └── .gitignore
 ```

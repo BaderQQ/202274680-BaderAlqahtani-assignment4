@@ -63,6 +63,7 @@ The goal is to keep the website useful beyond a single course submission. It is 
 │   └── technical-documentation.md
 ├── presentation/
 │   ├── slides.pdf
+│   ├── demo-video-PlanB.md
 │   └── demo-video.mp4
 └── .gitignore
 ```
