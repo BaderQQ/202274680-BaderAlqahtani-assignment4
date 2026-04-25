@@ -61,6 +61,9 @@ The goal is to keep the website useful beyond a single course submission. It is 
 ├── docs/
 │   ├── ai-usage-report.md
 │   └── technical-documentation.md
+├── presentation/
+│   ├── slides.pdf
+│   └── demo-video.mp4
 └── .gitignore
 ```
 

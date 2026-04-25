@@ -26,10 +26,10 @@ The website is designed to be practical for long-term personal use. It presents 
 │   └── images/
 ├── docs/
 │   ├── ai-usage-report.md
-│   ├── deployment-guide.md
-│   ├── technical-documentation.md
-│   ├── testing-checklist.md
-│   └── user-guide.md
+│   └── technical-documentation.md
+├── presentation/
+│   ├── slides.pdf
+│   └── demo-video.mp4
 └── .gitignore
 ```
 
